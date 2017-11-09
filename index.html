@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>kibibit logo animation</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Fredoka+One|Righteous'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class="toggler">toggle colors</div>
+<div id="logo"><span class="letter">k</span><!--
+--><div class="one-animation to-red">
+    <div class="dot"></div>
+    <div class="one-line"></div>
+    </div><!--
+--><div class="zero-animation">
+    <div class="zero"></div>
+    <div class="zero-line"></div>
+    </div><!--
+--><div class="one-animation to-blue">
+    <div class="dot"></div>
+    <div class="one-line"></div>
+    </div><!--
+--><div class="zero-animation">
+    <div class="zero "></div>
+    <div class="zero-line"></div>
+    </div><!--
+--><div class="one-animation to-yellow">
+    <div class="dot"></div>
+    <div class="one-line"></div>
+    </div><span class="letter">t</span></div>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+
+
+        <filter id="squiggly-0">
+            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="0"/>
+            <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="6" />
+        </filter>
+        <filter id="squiggly-1">
+            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="1"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" />
+        </filter>
+
+        <filter id="squiggly-2">
+            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="2"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" />
+        </filter>
+        <filter id="squiggly-3">
+            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="3"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" />
+        </filter>
+
+        <filter id="squiggly-4">
+            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="4"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" />
+        </filter>
+    </defs> 
+</svg>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+    <script  src="js/index.js"></script>
+
+</body>
+</html>
