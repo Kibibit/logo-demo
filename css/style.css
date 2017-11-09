@@ -71,7 +71,7 @@ svg {
 }
 .one-animation .one-line {
   width: 23px;
-  height: 93%;
+  height: 92.5%;
   background: white;
   position: absolute;
   bottom: 0;
@@ -94,7 +94,7 @@ svg {
 }
 .zero-animation .zero-line {
   content: "";
-  width: 24px;
+  width: 23px;
   height: 0;
   background: white;
   z-index: 500;
