@@ -1,0 +1,162 @@
+.toggler {
+  font-size: 1rem;
+  font-family: 'Righteous', cursive;
+  background: red;
+  padding: 10px;
+  border-radius: 3px;
+  box-shadow: 9px 9px 0px 1px rgba(0, 0, 0, 0.75);
+}
+
+#logo {
+  overflow: hidden;
+  white-space: nowrap;
+  zoom: 70%;
+}
+
+#logo.only-white .dot,
+#logo.only-white .one-line,
+#logo.only-white .zero-line {
+  background: white !important;
+}
+#logo.only-white .zero {
+  border-color: white !important;
+}
+
+svg {
+  position: absolute;
+}
+
+#logo .letter {
+  opacity: 0;
+  transition: all 250ms ease-in-out;
+}
+
+#logo.active .letter {
+  opacity: 1;
+}
+
+.one-animation {
+  margin: 0 10px;
+  display: inline-block;
+  height: 122px;
+  width: 23px;
+  position: relative;
+}
+.one-animation.turn-to-i.to-red .dot, .one-animation.turn-to-i.to-red .one-line {
+  background: #E31B36;
+}
+.one-animation.turn-to-i.to-blue .dot, .one-animation.turn-to-i.to-blue .one-line {
+  background: #00A2C9;
+}
+.one-animation.turn-to-i.to-yellow .dot, .one-animation.turn-to-i.to-yellow .one-line {
+  background: #EEB146;
+}
+.one-animation.turn-to-i .one-line {
+  height: 70%;
+}
+.one-animation.turn-to-i .dot {
+  width: 30px;
+  height: 30px;
+  top: 0;
+  left: -4px;
+  border-radius: 50%;
+}
+.one-animation .dot {
+  background: white;
+  position: absolute;
+  top: 9px;
+  width: 30px;
+  height: 24px;
+  left: -11px;
+  transition: all 250ms ease-in-out;
+}
+.one-animation .one-line {
+  width: 23px;
+  height: 93%;
+  background: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all 250ms ease-in-out;
+}
+
+.zero-animation {
+  margin: 0 5px;
+  display: inline-block;
+  height: 120px;
+  width: 90px;
+  position: relative;
+}
+.zero-animation.turn-to-b .zero {
+  height: 42px;
+}
+.zero-animation.turn-to-b .zero-line {
+  height: 65%;
+}
+.zero-animation .zero-line {
+  content: "";
+  width: 24px;
+  height: 0;
+  background: white;
+  z-index: 500;
+  position: absolute;
+  bottom: 35%;
+  left: 0;
+  transition: all 250ms ease-in-out;
+}
+.zero-animation .zero {
+  width: 40px;
+  height: 65px;
+  background: transparent;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 45px;
+  border: 24px solid white;
+  transition: all 250ms ease-in-out;
+}
+
+body {
+  font-family: 'Righteous', cursive;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background: #212121;
+}
+
+.squiggly {
+  -webkit-animation: squiggly-anim 0.34s linear infinite;
+  animation: squiggly-anim 0.34s linear infinite;
+}
+
+div {
+  font-size: 10rem;
+}
+
+@-webkit-keyframes squiggly-anim {
+  0% {
+    -webkit-filter: url("#squiggly-0");
+    filter: url("#squiggly-0");
+  }
+  25% {
+    -webkit-filter: url("#squiggly-1");
+    filter: url("#squiggly-1");
+  }
+  50% {
+    -webkit-filter: url("#squiggly-2");
+    filter: url("#squiggly-2");
+  }
+  75% {
+    -webkit-filter: url("#squiggly-3");
+    filter: url("#squiggly-3");
+  }
+  100% {
+    -webkit-filter: url("#squiggly-4");
+    filter: url("#squiggly-4");
+  }
+}
