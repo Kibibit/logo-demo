@@ -4,6 +4,10 @@ setInterval(function() {
     $('#logo').toggleClass('active');
 }, 5000);
 
-$('.toggler').click(function() {
+$('.toggler#colors').click(function() {
     $('#logo').toggleClass('only-white');
+});
+
+$('.toggler#kt').click(function() {
+    $('#logo').toggleClass('always-k-t');
 });
