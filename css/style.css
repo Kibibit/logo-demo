@@ -13,6 +13,10 @@
   white-space: nowrap;
 }
 
+#logo.always-k-t .letter {
+  opacity: 1 !important;
+}
+
 #logo.only-white .dot,
 #logo.only-white .one-line,
 #logo.only-white .zero-line {
