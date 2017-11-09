@@ -10,7 +10,6 @@
 #logo {
   overflow: hidden;
   white-space: nowrap;
-  zoom: 70%;
 }
 
 #logo.only-white .dot,
