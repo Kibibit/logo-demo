@@ -25,5 +25,5 @@ function changeBetween() {
 
     return setInterval(function() {
         $('#logo').toggleClass('shape-active');
-    }, 5000);
+    }, 4000);
 }
