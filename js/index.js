@@ -1,29 +1,61 @@
+var ELEMENTS = {
+    $logo: $('#logo'),
+    $togglerColors: $('.toggler#colors'),
+    $togglerKT: $('.toggler#kt'),
+    $togglerSquigglyLoader: $('.toggler#squiggly'),
+    $togglerAlwaysSquiggly: $('.toggler#squiggly2'),
+    $togglerLoaderAnimation: $('.toggler#loader')
+};
+
+var CLASSES = {
+    onlyWhite: 'only-white',
+    alwaysKT: 'always-k-t',
+    squiggly: 'squiggly',
+    alwaysSquiggly: 'always-squiggly',
+    loader: 'loader',
+    turnToName: 'shape-active',
+    activeButton: 'toggler-active'
+};
+
 var refreshIntervalId = changeBetween();
 
-$('.toggler#colors').click(function() {
-    $('#logo').toggleClass('only-white');
+ELEMENTS.$togglerColors.click(function() {
+    ELEMENTS.$logo.toggleClass(CLASSES.onlyWhite);
+    ELEMENTS.$togglerColors.toggleClass(CLASSES.activeButton);
 });
 
-$('.toggler#kt').click(function() {
-    $('#logo').toggleClass('always-k-t');
+ELEMENTS.$togglerKT.click(function() {
+    ELEMENTS.$logo.toggleClass(CLASSES.alwaysKT);
+    ELEMENTS.$togglerKT.toggleClass(CLASSES.activeButton);
 });
 
-$('.toggler#loader').click(function() {
+ELEMENTS.$togglerSquigglyLoader.click(function() {
+    ELEMENTS.$logo.toggleClass(CLASSES.squiggly);
+    ELEMENTS.$togglerSquigglyLoader.toggleClass(CLASSES.activeButton);
+})
+
+ELEMENTS.$togglerAlwaysSquiggly.click(function() {
+    ELEMENTS.$logo.toggleClass(CLASSES.alwaysSquiggly);
+    ELEMENTS.$togglerAlwaysSquiggly.toggleClass(CLASSES.activeButton);
+})
+
+ELEMENTS.$togglerLoaderAnimation.click(function() {
     if (refreshIntervalId) {
         clearInterval(refreshIntervalId);
         refreshIntervalId = null;
-        $('#logo').addClass('loader');
+        ELEMENTS.$logo.addClass(CLASSES.loader);
     } else {
         refreshIntervalId = changeBetween();
-        $('#logo').removeClass('loader');
+        ELEMENTS.$logo.removeClass(CLASSES.loader);
     }
-    $('#logo').removeClass('shape-active');
+    ELEMENTS.$logo.removeClass(CLASSES.turnToName);
+    ELEMENTS.$togglerLoaderAnimation.toggleClass(CLASSES.activeButton);
 })
 
 function changeBetween() {
-    $('#logo').removeClass('shape-active');
+    ELEMENTS.$logo.removeClass(CLASSES.turnToName);
 
     return setInterval(function() {
-        $('#logo').toggleClass('shape-active');
+        ELEMENTS.$logo.toggleClass(CLASSES.turnToName);
     }, 4000);
 }
