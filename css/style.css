@@ -12,6 +12,15 @@
 #logo {
   overflow: hidden;
   white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 30vw;
+}
+
+#logo.loader .shape-one .shape.shape2 {
+  animation: change-one-to-zero 4s linear infinite;
 }
 
 #logo.always-k-t .letter {
@@ -23,102 +32,119 @@
 #logo.only-white .zero-line {
   background: white !important;
 }
+
 #logo.only-white .zero {
   border-color: white !important;
 }
 
 svg {
-  position: absolute;
+  display: none;
 }
 
 #logo .letter {
   opacity: 0;
-  transition: all 250ms ease-in-out;
+  transition: all 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
 
-#logo.active .letter {
+#logo.shape-active .letter {
   opacity: 1;
 }
 
-.one-animation {
-  margin: 0 10px;
+.shape-animation {
   display: inline-block;
-  height: 122px;
-  width: 23px;
   position: relative;
-}
-.one-animation.turn-to-i.to-red .dot, .one-animation.turn-to-i.to-red .one-line {
-  background: #E31B36;
-}
-.one-animation.turn-to-i.to-blue .dot, .one-animation.turn-to-i.to-blue .one-line {
-  background: #00A2C9;
-}
-.one-animation.turn-to-i.to-yellow .dot, .one-animation.turn-to-i.to-yellow .one-line {
-  background: #EEB146;
-}
-.one-animation.turn-to-i .one-line {
-  height: 70%;
-}
-.one-animation.turn-to-i .dot {
-  width: 30px;
-  height: 30px;
-  top: 0;
-  left: -4px;
-  border-radius: 50%;
-}
-.one-animation .dot {
-  background: white;
-  position: absolute;
-  top: 9px;
-  width: 30px;
-  height: 24px;
-  left: -11px;
   transition: all 250ms ease-in-out;
 }
-.one-animation .one-line {
-  width: 23px;
+
+.shape-animation .shape1,
+.shape-animation .shape2 {
+  transition: all 250ms cubic-bezier(0.68, -0.55, 0.265, 1.55), background 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+
+.shape-animation.shape-one {
+  margin: 0 0.0625em;
+  display: inline-block;
+  height: 0.7625em;
+  width: 0.14375em;
+}
+
+.shape-animation.shape-one .shape1 {
+  background: white;
+  position: absolute;
+  top: 0.05625em;
+  width: 0.1875em;
+  height: 0.15em;
+  left: -0.06875em;
+}
+
+.shape-active .shape-animation.shape-one .shape1 {
+  width: 0.1875em;
+  height: 0.1875em;
+  top: 0;
+  left: -0.025em;
+  border-radius: 50%;
+}
+
+.shape-animation.shape-one .shape2 {
+  width: 0.14375em;
   height: 92.5%;
   background: white;
   position: absolute;
   bottom: 0;
   left: 0;
-  transition: all 250ms ease-in-out;
 }
 
-.zero-animation {
-  margin: 0 5px;
+.shape-active .shape-animation.shape-one .shape2 {
+  height: 70%;
+}
+
+.shape-animation.shape-zero {
+  margin: 0 0.03125em;
   display: inline-block;
-  height: 120px;
-  width: 90px;
+  height: 0.75em;
+  width: 0.5625em;
   position: relative;
 }
-.zero-animation.turn-to-b .zero {
-  height: 42px;
-}
-.zero-animation.turn-to-b .zero-line {
-  height: 65%;
-}
-.zero-animation .zero-line {
-  content: "";
-  width: 23px;
+
+.shape-animation.shape-zero .shape1 {
+  width: 0.14375em;
   height: 0;
   background: white;
   z-index: 500;
   position: absolute;
   bottom: 35%;
   left: 0;
-  transition: all 250ms ease-in-out;
 }
-.zero-animation .zero {
-  width: 40px;
-  height: 65px;
+
+.shape-active .shape-animation.shape-zero .shape1 {
+  height: 65%;
+}
+
+.shape-animation.shape-zero .shape2 {
+  width: 0.25em;
+  height: 0.40625em;
   background: transparent;
   position: absolute;
   bottom: 0;
   left: 0;
-  border-radius: 45px;
-  border: 24px solid white;
-  transition: all 250ms ease-in-out;
+  border-radius: 0.28125em;
+  border: 0.15em solid white;
+}
+
+.shape-active .shape-animation.shape-zero .shape2 {
+  height: 0.2625em;
+}
+
+.shape-active .shape-animation.to-red .shape {
+  background: #E31B36;
+}
+
+.shape-active .shape-animation.to-blue .shape {
+  background: #00A2C9;
+}
+
+.shape-active .shape-animation.to-yellow .shape {
+  background: #EEB146;
 }
 
 body {
@@ -128,19 +154,16 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction: row;
   width: 100vw;
   height: 100vh;
   background: #212121;
+  font-size: 16px;
 }
 
 .squiggly {
   -webkit-animation: squiggly-anim 0.34s linear infinite;
   animation: squiggly-anim 0.34s linear infinite;
-}
-
-div {
-  font-size: 10rem;
 }
 
 @-webkit-keyframes squiggly-anim {
@@ -163,5 +186,34 @@ div {
   100% {
     -webkit-filter: url("#squiggly-4");
     filter: url("#squiggly-4");
+  }
+}
+@-webkit-keyframes change-one-to-zero {
+  0% {
+    width: 0;
+    height: 0.40625em;
+    background: white;
+    bottom: 0;
+    left: 0;
+    border-radius: 0;
+    border: 0.15em solid white;
+  }
+  50% {
+    width: 0.25em;
+    height: 0.40625em;
+    background: transparent;
+    bottom: 0;
+    left: 0;
+    border-radius: 0.28125em;
+    border: 0.15em solid white;
+  }
+  100% {
+    width: 0;
+    height: 0.40625em;
+    background: white;
+    bottom: 0;
+    left: 0;
+    border-radius: 0;
+    border: 0.15em solid white;
   }
 }
