@@ -27,14 +27,13 @@
   opacity: 1 !important;
 }
 
-#logo.only-white .dot,
-#logo.only-white .one-line,
-#logo.only-white .zero-line {
+#logo.only-white .shape {
   background: white !important;
 }
 
-#logo.only-white .zero {
+#logo.only-white .shape-animation.shape-zero .shape2 {
   border-color: white !important;
+  background: transparent !important;
 }
 
 svg {
