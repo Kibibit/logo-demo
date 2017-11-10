@@ -1,5 +1,4 @@
 var refreshIntervalId = changeBetween();
-var _changeZerosAndOnes;
 
 $('.toggler#colors').click(function() {
     $('#logo').toggleClass('only-white');
@@ -27,14 +26,4 @@ function changeBetween() {
     return setInterval(function() {
         $('#logo').toggleClass('shape-active');
     }, 5000);
-}
-
-function changeZerosAndOnes() {
-    return setInterval(function() {
-        var ones = $('.shape-one');
-        var zeros = $('.shape-zero');
-        
-        ones.removeClass('shape-one').addClass('shape-zero');
-        zeros.removeClass('shape-zero').addClass('shape-one');
-    }, 500);
 }
