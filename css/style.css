@@ -11,6 +11,7 @@
 
 #logo {
   height: 70vh;
+  width: 100vw;
   overflow: hidden;
   white-space: nowrap;
   display: flex;
