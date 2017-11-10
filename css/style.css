@@ -23,6 +23,8 @@
 
 #logo.loader {
   animation: loader 1s linear infinite;
+  animation-delay: 500ms;
+  font-size: 21vw;
 }
 
 #logo.loader .shape-animation .shape1,
@@ -197,18 +199,18 @@ body {
 }
 @-webkit-keyframes loader {
   0% {
-    font-size: 39vw;
+    font-size: 21vw;
   }
   10% {
-    font-size: 39vw;
+    font-size: 21vw;
   }
   40% {
-    font-size: 21vw;
+    font-size: 12vw;
   }
   60% {
-    font-size: 21vw;
+    font-size: 12vw;
   }
   100% {
-    font-size: 39vw;
+    font-size: 21vw;
   }
 }
