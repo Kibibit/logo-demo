@@ -137,9 +137,10 @@ body {
 }
 .kb-logo.k1b1b0t .shape-one:first-of-type .shape1 {
   left: 0;
+  right: -0.06875em;
 }
 .kb-logo.k1b1b0t .shape-one.middle .shape1 {
-  width: 0.2775em;
+  right: -0.06875em;
 }
 .kb-logo.k1b1b0t .k1b1b0t-mouth-container .k1b1b0t-mouth {
   height: 100%;
