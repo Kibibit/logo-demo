@@ -118,6 +118,7 @@ body {
   height: 0.1875em;
   top: 0;
   left: -0.025em;
+  right: -0.025em;
   border-radius: 50%;
 }
 .kb-logo.shape-active .shape-animation.shape-one .shape2 {
@@ -208,7 +209,7 @@ body {
   background: currentColor;
   position: absolute;
   top: 0.05625em;
-  width: 0.1875em;
+  right: 0;
   height: 0.15em;
   left: -0.06875em;
 }
