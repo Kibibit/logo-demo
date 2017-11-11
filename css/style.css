@@ -1,47 +1,44 @@
 body {
-  background: #212121;
   display: flex;
-  flex-direction: row;
-  font-size: 16px;
-  height: 100vh;
-  overflow: hidden;
-  width: 100vw;
-
   align-items: start;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  background: #212121;
+  font-size: 16px;
+  overflow: hidden;
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
-  font-size: 30vw;
   height: 100vh;
-  pointer-events: none;
   width: 100vw;
-
-  align-items: center;
+  font-size: 30vw;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  pointer-events: none;
 }
 
 .ui-toggle {
+  position: fixed;
   bottom: 0;
   left: 0;
-  position: fixed;
 }
 
 .ui {
   display: flex;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
   position: fixed;
-  right: 0;
-  top: 0;
-  transition: all 250ms;
-
   flex-wrap: wrap;
   justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 250ms;
+  pointer-events: none;
 }
 .ui.visible {
   opacity: 1;
@@ -49,43 +46,42 @@ body {
 }
 
 .toggler {
-  background: #E31B36;
-  border-radius: 3px;
-  box-shadow: 9px 9px 0 1px rgba(0, 0, 0, 0.75);
-  color: white;
-  cursor: pointer;
-  font-family: 'Righteous', cursive;
-  font-size: 0.7rem;
   margin: 10px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-family: 'Righteous', cursive;
+  background: #E31B36;
   padding: 10px;
+  border-radius: 3px;
+  box-shadow: 9px 9px 0px 1px rgba(0, 0, 0, 0.75);
   transition: all 250ms;
+  color: white;
 }
 .toggler.toggler-active {
   background: #00A2C9;
 }
 
 .kb-logo {
-  color: white;
+  white-space: nowrap;
   display: inline-flex;
-  font-family: 'Righteous', cursive;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   font-size: 1em;
   line-height: 1em;
-  position: relative;
+  font-family: 'Righteous', cursive;
+  color: white;
   transition: all 500ms;
-  white-space: nowrap;
-
-  align-items: center;
-  justify-content: center;
 }
 .kb-logo.always-k-t .letter {
   opacity: 1 !important;
 }
 .kb-logo.purple {
-  color: #9E52CB !important;
+  color: #9e52cb !important;
 }
 .kb-logo.no-extra-colors .shape-animation.shape-zero .shape2 {
-  background: transparent !important;
   border-color: currentColor !important;
+  background: transparent !important;
 }
 .kb-logo.no-extra-colors .shape {
   background: currentColor !important;
@@ -94,8 +90,7 @@ body {
   animation: change-font-size 1s linear 500ms infinite;
   font-size: 21vw;
 }
-.kb-logo.loader.squiggly,
-.kb-logo.loader.always-squiggly {
+.kb-logo.loader.squiggly, .kb-logo.loader.always-squiggly {
   animation: change-font-size 1s linear 500ms infinite, squiggly-animation-filter 0.34s linear infinite;
   font-size: 21vw;
 }
@@ -119,11 +114,11 @@ body {
   height: 0.2625em;
 }
 .kb-logo.shape-active .shape-animation.shape-one .shape1 {
-  border-radius: 50%;
-  height: 0.1875em;
-  left: -0.025em;
-  top: 0;
   width: 0.1875em;
+  height: 0.1875em;
+  top: 0;
+  left: -0.025em;
+  border-radius: 50%;
 }
 .kb-logo.shape-active .shape-animation.shape-one .shape2 {
   height: 70%;
@@ -134,12 +129,10 @@ body {
 .kb-logo.k1b1b0t {
   transform: translate(0, -0.5em);
 }
-.kb-logo.k1b1b0t .shape-animation.shape-zero {
-  height: auto;
-}
 .kb-logo.k1b1b0t .shape-animation.shape-zero .shape2 {
-  animation: blink 2s infinite;
-  position: static;
+  bottom: 0.1em;
+  height: 0.1em;
+  animation: blink 2s infinite 250ms;
 }
 .kb-logo.k1b1b0t .shape-one:first-of-type .shape1 {
   left: 0;
@@ -155,26 +148,24 @@ body {
   transition: all 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
 .kb-logo .k1b1b0t-mouth-container {
-  display: flex;
-  font-size: 0.5em;
-  height: 1em;
   margin-left: 0.11em;
+  font-size: 0.5em;
   overflow: hidden;
-  position: absolute;
   top: 100%;
+  position: absolute;
   width: 80%;
-
-  align-items: center;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  height: 1em;
 }
 .kb-logo .k1b1b0t-mouth-container .k1b1b0t-mouth {
   display: flex;
-  height: 0;
-  overflow: hidden;
-  transition: all 500ms ease 300ms;
-
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  height: 0;
+  transition: all 500ms ease 300ms;
 }
 .kb-logo .shape-animation {
   display: inline-block;
@@ -182,52 +173,52 @@ body {
   transition: all 250ms ease-in-out;
 }
 .kb-logo .shape-animation.shape-zero {
+  margin: 0 0.03125em;
   display: inline-block;
   height: 0.75em;
-  margin: 0 0.03125em;
-  position: relative;
   width: 0.5625em;
+  position: relative;
 }
 .kb-logo .shape-animation.shape-zero .shape1 {
-  background: currentColor;
-  bottom: 35%;
-  height: 0;
-  left: 0;
-  position: absolute;
   width: 0.14375em;
+  height: 0;
+  background: currentColor;
   z-index: 500;
+  position: absolute;
+  bottom: 35%;
+  left: 0;
 }
 .kb-logo .shape-animation.shape-zero .shape2 {
-  background: transparent;
-  border: 0.15em solid currentColor;
-  border-radius: 0.28125em;
-  bottom: 0;
-  height: 0.40625em;
-  left: 0;
-  position: absolute;
   width: 0.25em;
+  height: 0.40625em;
+  background: transparent;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 0.28125em;
+  border: 0.15em solid currentColor;
 }
 .kb-logo .shape-animation.shape-one {
+  margin: 0 0.0625em;
   display: inline-block;
   height: 0.7625em;
-  margin: 0 0.0625em;
   width: 0.14375em;
 }
 .kb-logo .shape-animation.shape-one .shape1 {
   background: currentColor;
-  height: 0.15em;
-  left: -0.06875em;
   position: absolute;
   top: 0.05625em;
   width: 0.1875em;
+  height: 0.15em;
+  left: -0.06875em;
 }
 .kb-logo .shape-animation.shape-one .shape2 {
-  background: currentColor;
-  bottom: 0;
-  height: 92.5%;
-  left: 0;
-  position: absolute;
   width: 0.14375em;
+  height: 92.5%;
+  background: currentColor;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 .kb-logo .shape-animation .shape1,
 .kb-logo .shape-animation .shape2 {
@@ -240,29 +231,29 @@ body {
 
 .always-squiggly {
   -webkit-animation: squiggly-animation-filter 0.34s linear infinite;
-          animation: squiggly-animation-filter 0.34s linear infinite;
+  animation: squiggly-animation-filter 0.34s linear infinite;
 }
 
 @-webkit-keyframes squiggly-animation-filter {
   0% {
-    -webkit-filter: url('#squiggly-0');
-            filter: url('#squiggly-0');
+    -webkit-filter: url("#squiggly-0");
+    filter: url("#squiggly-0");
   }
   25% {
-    -webkit-filter: url('#squiggly-1');
-            filter: url('#squiggly-1');
+    -webkit-filter: url("#squiggly-1");
+    filter: url("#squiggly-1");
   }
   50% {
-    -webkit-filter: url('#squiggly-2');
-            filter: url('#squiggly-2');
+    -webkit-filter: url("#squiggly-2");
+    filter: url("#squiggly-2");
   }
   75% {
-    -webkit-filter: url('#squiggly-3');
-            filter: url('#squiggly-3');
+    -webkit-filter: url("#squiggly-3");
+    filter: url("#squiggly-3");
   }
   100% {
-    -webkit-filter: url('#squiggly-4');
-            filter: url('#squiggly-4');
+    -webkit-filter: url("#squiggly-4");
+    filter: url("#squiggly-4");
   }
 }
 @-webkit-keyframes change-font-size {
