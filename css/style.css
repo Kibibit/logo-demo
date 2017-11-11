@@ -16,12 +16,36 @@ body {
   display: flex;
   flex-direction: column;
   font-size: 30vw;
-  height: 50vh;
+  height: 100vh;
   pointer-events: none;
   width: 100vw;
 
   align-items: center;
   justify-content: center;
+}
+
+.ui-toggle {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+}
+
+.ui {
+  display: flex;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: all 250ms;
+
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.ui.visible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .toggler {
