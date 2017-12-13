@@ -18,7 +18,7 @@ var CLASSES = {
     squiggly: 'squiggly',
     alwaysSquiggly: 'always-squiggly',
     loader: 'loader',
-    turnToName: 'shape-active',
+    turnToName: 'full-logo',
     activeButton: 'toggler-active',
     purpleText: 'purple',
     k1b1b0t: 'k1b1b0t',
@@ -65,7 +65,7 @@ ELEMENTS.$togglerk1b1b0t.click(function() {
     } else {
         refreshIntervalId = changeBetween();
     }
-    
+
     toggleK1b1b0t(ELEMENTS.$logo);
     ELEMENTS.$togglerk1b1b0t.toggleClass(CLASSES.activeButton);
 })
