@@ -30,7 +30,7 @@ $( document ).ready(function() {
   let searchParams = new URLSearchParams(window.location.search);
   const customPunch = searchParams.get('punch');
   if (customPunch) {
-      $PUNCH.text(customPunch);
+      ELEMENTS.$PUNCH.text(customPunch);
   }
 });
 
