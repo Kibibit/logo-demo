@@ -9,7 +9,8 @@ var ELEMENTS = {
     $togglerPurple: $('.toggler#purple'),
     $togglerk1b1b0t: $('.toggler#k1b1b0t'),
     $togglerUI: $('.toggler#ui-toggle'),
-    $UI: $('.ui')
+    $UI: $('.ui'),
+    $PUNCH: $('#kb-punch')
 };
 
 var CLASSES = {
@@ -24,6 +25,14 @@ var CLASSES = {
     k1b1b0t: 'k1b1b0t',
     show: 'visible'
 };
+
+$( document ).ready(function() {
+  let searchParams = new URLSearchParams(window.location.search);
+  const customPunch = searchParams.get('punch');
+  if (customPunch) {
+      $PUNCH.text(customPunch);
+  }
+});
 
 var refreshIntervalId = changeBetween();
 changeBetween2();
