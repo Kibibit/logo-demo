@@ -29,9 +29,14 @@ var CLASSES = {
 $( document ).ready(function() {
   let searchParams = new URLSearchParams(window.location.search);
   const customPunch = searchParams.get('punch');
+    const hideBtns = searchParams.get('showButtons') === 'false';
   if (customPunch) {
       ELEMENTS.$PUNCH.text(customPunch);
   }
+    
+    if (hideBtns) {
+        ELEMENTS.$togglerUI.hide();
+    }
 });
 
 var refreshIntervalId = changeBetween();
