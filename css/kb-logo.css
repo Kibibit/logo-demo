@@ -1,8 +1,233 @@
-/**
- * kibibit-logo - all css needed for kibibit's logo animations
- * @version v1.0.0
- * @link https://github.com/Kibibit/kibibit-logo#readme
- * @license ISC
- * @owner neilkalman@gmail.com
- */
-@import url("https://fonts.googleapis.com/css?family=Righteous");.kb-logo{white-space:nowrap;display:inline-flex;justify-content:center;align-items:center;position:relative;font-size:1em;line-height:1em;font-family:Righteous,cursive;color:#fff;transition:all .5s}.kb-logo,.kb-logo *{box-sizing:content-box}.kb-logo.always-k-t .letter{opacity:1!important}.kb-logo.always-squiggly{-webkit-animation:a .34s linear infinite;animation:a .34s linear infinite}.kb-logo.purple{color:#9e52cb!important}.kb-logo.no-extra-colors .shape-animation.shape-zero .shape2{border-color:currentColor!important;background:transparent!important}.kb-logo.no-extra-colors .shape{background:currentColor!important}.kb-logo.loader{animation:b 1s linear .5s infinite;font-size:21vw}.kb-logo.loader.always-squiggly,.kb-logo.loader.squiggly{animation:b 1s linear .5s infinite,a .34s linear infinite;font-size:21vw}.kb-logo.loader .shape-animation .shape1,.kb-logo.loader .shape-animation .shape2{transition:all .25s ease-in-out,background .25s ease-in-out}.kb-logo.full-logo .shape-animation.to-red .shape{background:#e31b36}.kb-logo.full-logo .shape-animation.to-blue .shape{background:#00a2c9}.kb-logo.full-logo .shape-animation.to-yellow .shape{background:#eeb146}.kb-logo.full-logo .shape-animation.shape-zero .shape1{height:65%}.kb-logo.full-logo .shape-animation.shape-zero .shape2{height:.2625em}.kb-logo.full-logo .shape-animation.shape-one .shape1{width:.1875em;height:.1875em;top:0;left:-.025em;right:-.025em;border-radius:50%}.kb-logo.full-logo .shape-animation.shape-one .shape2{height:70%}.kb-logo.full-logo .letter{opacity:1}.kb-logo.k1b1b0t{transform:translateY(-.5em)}.kb-logo.k1b1b0t .shape-animation.shape-zero .shape2{bottom:.1em;height:.1em;animation:c 2s infinite .25s}.kb-logo.k1b1b0t .shape-one:first-of-type .shape1{left:0;right:-.06875em}.kb-logo.k1b1b0t .shape-one.middle .shape1{right:-.06875em}.kb-logo.k1b1b0t .k1b1b0t-mouth-container .k1b1b0t-mouth{height:100%}.kb-logo .letter{opacity:0;transition:all .25s cubic-bezier(.895,.03,.685,.22)}.kb-logo .k1b1b0t-mouth-container{margin-left:.11em;font-size:.5em;overflow:hidden;top:100%;position:absolute;width:80%;display:flex;justify-content:center;align-items:center;height:1em}.kb-logo .k1b1b0t-mouth-container .k1b1b0t-mouth{display:flex;align-items:center;justify-content:center;overflow:hidden;height:0;transition:all .5s ease .3s}.kb-logo .shape-animation{display:inline-block;position:relative;transition:all .25s ease-in-out}.kb-logo .shape-animation.shape-zero{margin:0 .03125em;display:inline-block;height:.75em;width:.5625em;position:relative}.kb-logo .shape-animation.shape-zero .shape1{width:.14375em;height:0;background:currentColor;z-index:1;position:absolute;bottom:35%;left:0}.kb-logo .shape-animation.shape-zero .shape2{width:.25em;height:.40625em;background:transparent;position:absolute;bottom:0;left:0;border-radius:.28125em;border:.15em solid currentColor}.kb-logo .shape-animation.shape-one{margin:0 .0625em;display:inline-block;height:.7625em;width:.14375em}.kb-logo .shape-animation.shape-one .shape1{background:currentColor;position:absolute;top:.05625em;right:0;height:.15em;left:-.06875em}.kb-logo .shape-animation.shape-one .shape2{width:.14375em;height:92.5%;background:currentColor;position:absolute;bottom:0;left:0}.kb-logo .shape-animation .shape1,.kb-logo .shape-animation .shape2{transition:all .25s cubic-bezier(.68,-.7,.265,1.7),background .25s cubic-bezier(.895,.03,.685,.22)}@keyframes a{0%{-webkit-filter:url(#squiggly-0);filter:url(#squiggly-0)}25%{-webkit-filter:url(#squiggly-1);filter:url(#squiggly-1)}50%{-webkit-filter:url(#squiggly-2);filter:url(#squiggly-2)}75%{-webkit-filter:url(#squiggly-3);filter:url(#squiggly-3)}to{-webkit-filter:url(#squiggly-4);filter:url(#squiggly-4)}}@keyframes b{0%{font-size:21vw}10%{font-size:21vw}40%{font-size:12vw}60%{font-size:12vw}to{font-size:21vw}}@keyframes c{0%{height:.1em}45%{height:.1em}50%{height:0}55%{height:.1em}to{height:.1em}}
+@import url("https://fonts.googleapis.com/css?family=Righteous");
+.kb-logo {
+  white-space: nowrap;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 1em;
+  line-height: 1em;
+  font-family: "Righteous", cursive;
+  color: white;
+  transition: all 500ms;
+  box-sizing: content-box;
+}
+.kb-logo * {
+  box-sizing: content-box;
+  color: white;
+}
+.kb-logo.always-k-t .letter {
+  opacity: 1 !important;
+}
+.kb-logo.always-squiggly {
+  -webkit-animation: squiggly-animation-filter 0.34s linear infinite;
+  animation: squiggly-animation-filter 0.34s linear infinite;
+}
+.kb-logo.purple {
+  color: #9e52cb !important;
+}
+.kb-logo.no-extra-colors .shape-animation.shape-zero .shape2 {
+  border-color: currentColor !important;
+  background: transparent !important;
+}
+.kb-logo.no-extra-colors .shape {
+  background: currentColor !important;
+}
+.kb-logo.loader, .kb-logo.kb-loader {
+  animation: change-font-size 1s linear 500ms infinite;
+  font-size: 21vw;
+}
+.kb-logo.loader.squiggly, .kb-logo.loader.always-squiggly, .kb-logo.kb-loader.squiggly, .kb-logo.kb-loader.always-squiggly {
+  animation: change-font-size 1s linear 500ms infinite, squiggly-animation-filter 0.34s linear infinite;
+  font-size: 21vw;
+}
+.kb-logo.loader .shape-animation .shape1,
+.kb-logo.loader .shape-animation .shape2, .kb-logo.kb-loader .shape-animation .shape1,
+.kb-logo.kb-loader .shape-animation .shape2 {
+  transition: all 250ms ease-in-out, background 250ms ease-in-out;
+}
+.kb-logo.full-logo .shape-animation.to-red .shape {
+  background: #E31B36;
+}
+.kb-logo.full-logo .shape-animation.to-blue .shape {
+  background: #00A2C9;
+}
+.kb-logo.full-logo .shape-animation.to-yellow .shape {
+  background: #EEB146;
+}
+.kb-logo.full-logo .shape-animation.shape-zero .shape1 {
+  height: 65%;
+}
+.kb-logo.full-logo .shape-animation.shape-zero .shape2 {
+  height: 0.2625em;
+}
+.kb-logo.full-logo .shape-animation.shape-one .shape1 {
+  width: 0.1875em;
+  height: 0.1875em;
+  top: 0;
+  left: -0.025em;
+  right: -0.025em;
+  border-radius: 50%;
+}
+.kb-logo.full-logo .shape-animation.shape-one .shape2 {
+  height: 70%;
+}
+.kb-logo.full-logo .letter {
+  opacity: 1;
+}
+.kb-logo.k1b1b0t {
+  transform: translate(0, -0.5em);
+}
+.kb-logo.k1b1b0t .shape-animation.shape-zero .shape2 {
+  bottom: 0.1em;
+  height: 0.1em;
+  animation: blink 2s infinite 250ms;
+}
+.kb-logo.k1b1b0t .shape-one:first-of-type .shape1 {
+  left: 0;
+  right: -0.06875em;
+}
+.kb-logo.k1b1b0t .shape-one.middle .shape1 {
+  right: -0.06875em;
+}
+.kb-logo.k1b1b0t .k1b1b0t-mouth-container .k1b1b0t-mouth {
+  height: 100%;
+}
+.kb-logo .letter {
+  opacity: 0;
+  transition: all 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+.kb-logo .k1b1b0t-mouth-container {
+  margin-left: 0.11em;
+  font-size: 0.5em;
+  overflow: hidden;
+  top: 100%;
+  position: absolute;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1em;
+}
+.kb-logo .k1b1b0t-mouth-container .k1b1b0t-mouth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 0;
+  transition: all 500ms ease 300ms;
+}
+.kb-logo .shape-animation {
+  display: inline-block;
+  position: relative;
+  transition: all 250ms ease-in-out;
+}
+.kb-logo .shape-animation.shape-zero {
+  margin: 0 0.03125em;
+  display: inline-block;
+  height: 0.75em;
+  width: 0.5625em;
+  position: relative;
+}
+.kb-logo .shape-animation.shape-zero .shape1 {
+  width: 0.14375em;
+  height: 0;
+  background: currentColor;
+  z-index: 500;
+  position: absolute;
+  bottom: 35%;
+  left: 0;
+}
+.kb-logo .shape-animation.shape-zero .shape2 {
+  width: 0.25em;
+  height: 0.40625em;
+  background: transparent;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 0.28125em;
+  border: 0.15em solid currentColor;
+}
+.kb-logo .shape-animation.shape-one {
+  margin: 0 0.0625em;
+  display: inline-block;
+  height: 0.7625em;
+  width: 0.14375em;
+}
+.kb-logo .shape-animation.shape-one .shape1 {
+  background: currentColor;
+  position: absolute;
+  top: 0.05625em;
+  right: 0;
+  height: 0.15em;
+  left: -0.06875em;
+}
+.kb-logo .shape-animation.shape-one .shape2 {
+  width: 0.14375em;
+  height: 92.5%;
+  background: currentColor;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.kb-logo .shape-animation .shape1,
+.kb-logo .shape-animation .shape2 {
+  transition: all 250ms cubic-bezier(0.68, -0.7, 0.265, 1.7), background 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+
+@keyframes squiggly-animation-filter {
+  0% {
+    -webkit-filter: url("#squiggly-0");
+    filter: url("#squiggly-0");
+  }
+  25% {
+    -webkit-filter: url("#squiggly-1");
+    filter: url("#squiggly-1");
+  }
+  50% {
+    -webkit-filter: url("#squiggly-2");
+    filter: url("#squiggly-2");
+  }
+  75% {
+    -webkit-filter: url("#squiggly-3");
+    filter: url("#squiggly-3");
+  }
+  100% {
+    -webkit-filter: url("#squiggly-4");
+    filter: url("#squiggly-4");
+  }
+}
+@keyframes change-font-size {
+  0% {
+    font-size: 21vw;
+  }
+  10% {
+    font-size: 21vw;
+  }
+  40% {
+    font-size: 12vw;
+  }
+  60% {
+    font-size: 12vw;
+  }
+  100% {
+    font-size: 21vw;
+  }
+}
+@keyframes blink {
+  0% {
+    height: 0.1em;
+  }
+  45% {
+    height: 0.1em;
+  }
+  50% {
+    height: 0;
+  }
+  55% {
+    height: 0.1em;
+  }
+  100% {
+    height: 0.1em;
+  }
+}
