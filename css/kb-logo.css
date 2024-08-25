@@ -4,6 +4,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  /* align-items: end; */
   position: relative;
   font-size: 1em;
   line-height: 1em;
@@ -11,6 +12,13 @@
   color: white;
   transition: all 500ms;
   box-sizing: content-box;
+}
+#kb-punch {
+  opacity: 0;
+  transition: all 500ms;
+}
+#kb-punch.visible {
+  opacity: 1;
 }
 .kb-logo * {
   box-sizing: content-box;
@@ -34,17 +42,28 @@
   background: currentColor !important;
 }
 .kb-logo.loader, .kb-logo.kb-loader {
-  animation: change-font-size 1s linear 500ms infinite;
-  font-size: 21vw;
+  /* animation: change-font-size 1s linear 500ms infinite; */
+  /* font-size: 21vw; */
 }
 .kb-logo.loader.squiggly, .kb-logo.loader.always-squiggly, .kb-logo.kb-loader.squiggly, .kb-logo.kb-loader.always-squiggly {
-  animation: change-font-size 1s linear 500ms infinite, squiggly-animation-filter 0.34s linear infinite;
-  font-size: 21vw;
+  animation: heigher 1s linear 500ms infinite, squiggly-animation-filter 0.34s linear infinite;
+  /* font-size: 21vw; */
 }
+
+.kb-logo.loader .shape-animation {
+  animation: heigher 1s cubic-bezier(.17,.67,.83,.67) infinite calc(var(--animation-order) * 100ms);
+}
+
+.kb-logo.loader .shape-animation.shape-zero .shape2 {
+  height: 55%;
+}
+
+
+.kb-logo.loader .shape-animation,
 .kb-logo.loader .shape-animation .shape1,
 .kb-logo.loader .shape-animation .shape2, .kb-logo.kb-loader .shape-animation .shape1,
 .kb-logo.kb-loader .shape-animation .shape2 {
-  transition: all 250ms ease-in-out, background 250ms ease-in-out;
+  transition: none;
 }
 .kb-logo.full-logo .shape-animation.to-red .shape {
   background: #E31B36;
@@ -229,5 +248,20 @@
   }
   100% {
     height: 0.1em;
+  }
+}
+
+@keyframes heigher {
+  0% {
+    height: 0.7625em;
+  }
+  33% {
+    height: 0.65em;
+  }
+  66% {
+    height: 0.9em;
+  }
+  100% {
+    height: 0.7625em;
   }
 }

@@ -40,6 +40,7 @@ $( document ).ready(function() {
 });
 
 var refreshIntervalId = changeBetween();
+var loaderRefreshIntervalId = null;
 changeBetween2();
 
 ELEMENTS.$togglerColors.click(function() {
@@ -89,9 +90,14 @@ ELEMENTS.$togglerLoaderAnimation.click(function() {
         clearInterval(refreshIntervalId);
         refreshIntervalId = null;
         ELEMENTS.$logo.addClass(CLASSES.loader);
+        ELEMENTS.$PUNCH.removeClass(CLASSES.show);
+        // loaderRefreshIntervalId = changeBits();
     } else {
+        clearInterval(loaderRefreshIntervalId);
+        loaderRefreshIntervalId = null;
         refreshIntervalId = changeBetween();
         ELEMENTS.$logo.removeClass(CLASSES.loader);
+        ELEMENTS.$PUNCH.addClass(CLASSES.show);
     }
     ELEMENTS.$logo.removeClass(CLASSES.turnToName);
     ELEMENTS.$togglerLoaderAnimation.toggleClass(CLASSES.activeButton);
@@ -103,6 +109,19 @@ function changeBetween() {
     return setInterval(function() {
         ELEMENTS.$logo.toggleClass(CLASSES.turnToName);
     }, 4000);
+}
+
+function changeBits() {
+    return setInterval(function() {
+        const allOnes = ELEMENTS.$logo.find('.shape-one');
+        const allZeros = ELEMENTS.$logo.find('.shape-zero');
+
+        // change ones to zeros
+        allOnes.removeClass('shape-one').addClass('shape-zero');
+
+        // change zeros to ones
+        allZeros.removeClass('shape-zero').addClass('shape-one');
+    }, 250);
 }
 
 function changeBetween2() {
